@@ -43,7 +43,7 @@ include_once("koneksi.php");
                         </ul>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="index.php?page=pasien">Pasien</a>
+                        <a class="nav-link" aria-current="page" href="pasien/loginPasien.php">Pasien</a>
                     </li>
                 </ul>
                 <?php
@@ -67,10 +67,10 @@ include_once("koneksi.php");
                             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Login</a>
                             <ul class="dropdown-menu">
                                 <li>
-                                    <a class="dropdown-item" href="index.php?page=loginUser">Admin</a>
+                                    <a class="dropdown-item" href="admin/loginAdmin.php">Admin</a>
                                 </li>
                                 <li>
-                                    <a class="dropdown-item" href="index.php?page=loginDokter">Dokter</a>
+                                    <a class="dropdown-item" href="dokter/loginDokter.php">Dokter</a>
                                 </li>
                             </ul>
                         </li>
