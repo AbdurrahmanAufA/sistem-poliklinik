@@ -1,4 +1,7 @@
 <?php
+if (!isset($_SESSION)) {
+  session_start();
+}
 include_once("../koneksi.php");
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   $no_rm = $_POST['no_rm'];
@@ -18,20 +21,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   } else {
     $error = "No. Rekam Medis tidak ditemukan";
   }
-
-  // if ($no_ktp === $confirm_ktp) {
-  //     $query = "SELECT * FROM pasien WHERE no_rm = '$no_rm'";
-  //     $result = $mysqli->query($query);
-
-  //     if (!$result) {
-  //         die("Query error: " . $mysqli->error);
-  //     }
-
-  //     header("Location: index.php?page=rawatJalan");
-
-  // } else {
-  //     $error = "No. Rekam Medis tidak ditemukan";
-  // }
 }
 ?>
 

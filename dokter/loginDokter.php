@@ -1,15 +1,12 @@
 <?php
-if (!isset($_SESSION)) {
-  session_start();
-}
-
+session_start();
 include_once("../koneksi.php");
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-  $nip = $_POST['nip'];
+  $username = $_POST['nama'];
   $password = $_POST['password'];
 
-  $query = "SELECT * FROM dokter WHERE nip = '$nip'";
+  $query = "SELECT * FROM dokter WHERE nama = '$username'";
   $result = $mysqli->query($query);
 
   if (!$result) {
@@ -19,7 +16,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   if ($result->num_rows == 1) {
     $row = $result->fetch_assoc();
     if (password_verify($password, $row['password'])) {
-      $_SESSION['nip'] = $dokter;
+      $_SESSION['id'] = $row['id'];
+      $_SESSION['username'] = $row['nama'];
+      $_SESSION['password'] = $row['password'];
+      $_SESSION['id_poli'] = $row['id_poli'];
+      $_SESSION['akses'] = "dokter";
       header("Location: index.php");
     } else {
       $error = "Password salah";
@@ -69,7 +70,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
           }
           ?>
           <div class="input-group mb-3">
-            <input type="text" name="nip" class="form-control" required placeholder="Masukkan nip anda">
+            <input type="text" name="nama" class="form-control" required placeholder="Masukkan nama anda">
             <div class="input-group-append">
               <div class="input-group-text">
                 <span class="fas fa-envelope"></span>

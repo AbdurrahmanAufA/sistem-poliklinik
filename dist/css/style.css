@@ -1,0 +1,197 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap');
+
+body{
+    font-family: 'Poppins', sans-serif;
+    /* background: #ececec; */
+}
+
+main{
+    padding-top: 5.5rem;
+}
+
+.navbar-brand{
+    font-size: 30px !important;
+    font-weight: bold;
+    color: white !important;
+}
+.navbar-brand:hover{
+    font-size: 25px;
+    font-weight: bold;
+    color: black !important;
+}
+
+nav{
+    color: black !important;
+    padding: 10px;
+    text-align: center;
+}
+
+nav ul li a:hover {
+    color: black !important;
+}
+
+.about_section .row {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+}
+
+.about_section .img-box img {
+    max-width: 100%;
+}
+
+.about_section .detail-box p {
+    color: black;
+    margin-top: 15px;
+}
+
+.about_section .detail-box a {
+    display: inline-block;
+    padding: 10px 45px;
+    background-color: #252525;
+    color: #ffffff;
+    border-radius: 5px;
+    margin-top: 15px;
+}
+
+.about_section .detail-box a:hover {
+    background-color: #0c0c0c;
+}
+
+.treatment_section {
+    position: relative;
+}
+
+.treatment_section .side_img {
+    position: absolute;
+    right: 15px;
+    width: 175px;
+    height: auto;
+    bottom: 125px;
+}
+
+.treatment_section .side_img img {
+    width: 100%;
+}
+
+.treatment_section .heading_container h2 {
+    text-transform: none;
+}
+
+.treatment_section .box {
+    margin-top: 45px;
+}
+
+.treatment_section .box .img-box {
+    width: 65px;
+}
+
+.treatment_section .box .img-box img {
+    width: 100%;
+}
+
+.treatment_section .box .detail-box {
+    margin-top: 15px;
+}
+
+.treatment_section .box .detail-box h4 {
+    font-weight: bold;
+}
+
+.treatment_section .box .detail-box a {
+    text-transform: uppercase;
+    color: #00c6a9;
+}
+
+.treatment_section .box .detail-box a:hover {
+    color: #252525;
+}
+
+.heading_container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+}
+
+.heading_container h2 {
+    position: relative;
+    font-weight: bold;
+}
+
+.heading_container h2 span {
+    color: black;
+}
+
+.heading_container.heading_center {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    text-align: center;
+}
+
+.aboutpoli{
+    text-align: justify;
+    font-size: 24px !important;
+}
+.detail-box2{
+    font-family: 'Roboto', sans-serif;
+}
+.detail-box2 .keterangan{
+    text-align: justify;
+}
+.detail-box2 h2{
+    font-weight: bold !important;
+}
+
+/*------------ Login container ------------*/
+.loginpage {
+    background-color: #217154;
+}
+.box-area{
+    width: 930px;
+}
+
+/*------------ Right box ------------*/
+
+.right-box{
+    padding: 40px 30px 40px 40px;
+}
+
+/*------------ Custom Placeholder ------------*/
+
+::placeholder{
+    font-size: 16px;
+}
+
+.rounded-4{
+    border-radius: 20px;
+}
+.rounded-5{
+    border-radius: 30px;
+}
+
+
+/*------------ For small screens------------*/
+
+@media only screen and (max-width: 768px){
+
+    .box-area{
+    margin: 0 5px;
+
+    }
+    .left-box{
+    height: 100px;
+    overflow: hidden;
+    }
+    .right-box{
+    padding: 20px;
+    }
+
+}

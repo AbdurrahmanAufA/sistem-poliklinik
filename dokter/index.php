@@ -1,8 +1,5 @@
 <?php
-if (!isset($_SESSION)) {
-    session_start();
-}
-
+session_start();
 include_once("../koneksi.php");
 ?>
 <!DOCTYPE html>
@@ -24,6 +21,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <link rel="stylesheet" href="../plugins/fontawesome-free/css/all.min.css">
     <!-- Theme style -->
     <link rel="stylesheet" href="../dist/css/adminlte.min.css">
+    <!-- Select2 -->
+    <link rel="stylesheet" href="../plugins/select2/css/select2.min.css">
+    <link rel="stylesheet" href="../plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css">
+</head>
 </head>
 
 <body class="hold-transition sidebar-mini">
@@ -46,7 +47,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         <img src="../dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
                     </div>
                     <div class="info">
-                        <a href="#" class="d-block">Alexander Pierce</a>
+                        <a href="#" class="d-block"><?php echo $_SESSION['username']  ?></a>
                     </div>
                 </div>
 
@@ -70,21 +71,21 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         <li class="nav-item menu-open">
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    <a class="nav-link" href="index.php?page=pasien">
+                                    <a class="nav-link" href="index.php?page=jadwal">
                                         <i class="far fa-circle nav-icon"></i>
-                                        <p>Pasien</p>
+                                        <p>Jadwal Periksa</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="index.php?page=obat">
+                                    <a class="nav-link" href="index.php?page=periksa">
                                         <i class="far fa-circle nav-icon"></i>
-                                        <p>Obat</p>
+                                        <p>Periksa Pasien</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="index.php?page=poli">
+                                    <a class="nav-link" href="index.php?page=riwayatPasien">
                                         <i class="far fa-circle nav-icon"></i>
-                                        <p>Poli</p>
+                                        <p>Riwayat Pasien</p>
                                     </a>
                                 </li>
                             </ul>

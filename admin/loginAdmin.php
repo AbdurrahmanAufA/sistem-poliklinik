@@ -1,8 +1,5 @@
 <?php
-if (!isset($_SESSION)) {
-  session_start();
-}
-
+session_start();
 include_once("../koneksi.php");
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {

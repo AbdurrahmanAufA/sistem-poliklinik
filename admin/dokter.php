@@ -13,12 +13,13 @@ if (isset($_POST['simpan'])) {
             WHERE
             id = '" . $_POST['id'] . "'");
     } else {
-        $tambah = mysqli_query($mysqli, "INSERT INTO dokter (nama, alamat, no_hp, id_poli) 
+        $tambah = mysqli_query($mysqli, "INSERT INTO dokter (nama, alamat, no_hp, id_poli, password) 
             VALUES (
                 '" . $_POST['nama'] . "',
                 '" . $_POST['alamat'] . "',
                 '" . $_POST['no_hp'] . "',
-                '" . $_POST['id_poli'] . "'
+                '" . $_POST['id_poli'] . "',
+                '" . password_hash($_POST['nama'], PASSWORD_DEFAULT) . "'
             )");
     }
     echo "<script> 

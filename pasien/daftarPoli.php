@@ -1,5 +1,9 @@
 <?php
+if (!isset($_SESSION)) {
+    session_start();
+}
 include_once("../koneksi.php");
+echo $_SESSION['id_pasien'];
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $keluhan = $_POST['keluhan'];
     $id_jadwal = $_POST['id_jadwal'];
@@ -15,7 +19,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $no_antrian = $row['max_no'] !== null ? $row['max_no'] + 1 : 1;
 
     // Insert the new poli registration into the daftar_poli table
-    $insert_query = "INSERT INTO daftar_poli (id_pasien, id_jadwal, keluhan, no_antrian, tanggal) VALUES ('" . $_SESSION['id_pasien'] . "', '$id_jadwal', '$keluhan', '$no_antrian', NOW())";
+    $insert_query = "INSERT INTO daftar_poli (id_pasien, id_jadwal, keluhan, no_antrian, status_periksa) VALUES ('" . $_SESSION['id_pasien'] . "', '$id_jadwal', '$keluhan', '$no_antrian', '0')";
     if (mysqli_query($mysqli, $insert_query)) {
         // echo "<script>alert('No antrian anda adalah $no_antrian');</script>";
         $success = "No antrian anda adalah $no_antrian";
@@ -65,7 +69,7 @@ $dokter_schedules = $result->fetch_all(MYSQLI_ASSOC);
                 <form class="form row" method="POST" action="" name="myForm" onsubmit="return(validate());">
                     <?php
                     if (!isset($error) && isset($_GET['no_antrian'])) {
-                        echo '<div class="alert alert-success"> Nomor RM anda adalah ' . $_GET['no_antrian'] . '
+                        echo '<div class="alert alert-success"> Nomor Antrian anda adalah ' . $_GET['no_antrian'] . '
                                     <button name="success" type="button" class="close" data-dismiss="alert" aria-label="Success">
                                         <span aria-hidden="true">&times;</span>
                                     </button>
